@@ -1,0 +1,256 @@
+.signup-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, #fff1a1, #ffd8a8, #ffb3a1, #a2c2e1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background 2.5s ease-in-out;
+}
+
+/* 🌙 Transition to Night */
+.signup-container.night {
+  background: linear-gradient(to top, #01172b, #022a4b);
+}
+
+/* ☀ Sun */
+.sun {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fffcc2, #ffd500);
+  box-shadow: 0 0 120px 40px rgba(255, 217, 0, 0.5);
+  transition: all 2.5s ease-in-out;
+}
+
+.signup-container.night .sun {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #dcdcdc);
+  box-shadow: 0 0 50px 15px rgba(255, 255, 255, 0.2);
+  transform: translateY(-40px);
+}
+
+/* ☁ Clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: floatClouds 25s linear infinite;
+  transition: opacity 2s ease-in-out;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 80%;
+  height: 80%;
+  top: -20%;
+  left: 10%;
+}
+
+.cloud::after {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 60%;
+}
+
+.cloud1 {
+  top: 120px;
+  left: 10%;
+  width: 160px;
+  height: 90px;
+  animation-delay: 0s;
+}
+
+.cloud2 {
+  top: 200px;
+  left: 70%;
+  width: 180px;
+  height: 100px;
+  animation-delay: 5s;
+}
+
+.cloud3 {
+  top: 180px;
+  left: 40%;
+  width: 200px;
+  height: 110px;
+  animation-delay: 2s;
+}
+
+@keyframes floatClouds {
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(110vw); }
+}
+
+.signup-container.night .cloud {
+  opacity: 0.3;
+}
+
+/* 🌳 Trees + Grass Field */
+/* 🌿 Lush Grass + Trees Section */
+.trees {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, #2e8b57 20%, #3cb371 80%);
+  border-top-left-radius: 70% 180%;
+  border-top-right-radius: 70% 180%;
+  overflow: hidden;
+  box-shadow: inset 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌳 Add a few stylized tree shapes */
+.tree {
+  position: absolute;
+  bottom: 30px;
+  width: 50px;
+  height: 120px;
+  background: #1e5631;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom center;
+  animation: sway 6s ease-in-out infinite;
+}
+
+.tree::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 25px;
+  background: #4e3620;
+  border-radius: 3px;
+}
+
+/* 🌲 Different tree positions and colors */
+.tree:nth-child(1) {
+  left: 10%;
+  background: #26734d;
+  animation-delay: 0s;
+}
+
+.tree:nth-child(2) {
+  left: 25%;
+  background: #1e5631;
+  animation-delay: 2s;
+}
+
+.tree:nth-child(3) {
+  left: 5%;
+  background: #26734d;
+  animation-delay: 1s;
+}
+
+.tree:nth-child(4) {
+  left: 70%;
+  background: #21693a;
+  animation-delay: 3s;
+}
+
+.tree:nth-child(5) {
+  left: 85%;
+  background: #1e5631;
+  animation-delay: 4s;
+}
+
+/* 🌬️ Gentle tree sway animation */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+.signup-container.night .trees {
+  background: linear-gradient(to top, #022a4b, #011a2b);
+  box-shadow: none;
+}
+
+/* ✨ Signup Box */
+.signup-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 40px 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+  z-index: 10;
+  color: #333;
+  height: 400px;
+  width: 400px;
+}
+
+.signup-container.night .signup-box {
+  color: white;
+}
+
+.signup-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
+
+.signup-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-size: 1em;
+}
+
+.signup-container.night .signup-box input {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.signup-box input::placeholder {
+  color: rgba(50, 50, 50, 0.8);
+}
+
+.signup-container.night .signup-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.signup-box button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

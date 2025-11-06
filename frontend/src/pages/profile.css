@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #e6e6fa, #d1e3ff, #f0e6ff);
+  color: #222;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Wrapper */
+.profile-wrapper {
+  padding: 40px 60px;
+  text-align: center;
+}
+
+/* Top bar section */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.top-bar h2 {
+  font-size: 28px;
+  color: #4b3f72;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.top-buttons button {
+  background: #8fa6ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: white;
+  margin-left: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top-buttons button:hover {
+  background: #6579d9;
+  transform: translateY(-2px);
+}
+
+/* Profile info card */
+.info-card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  width: 50%;
+  margin: 0 auto 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(140, 120, 200, 0.2);
+  text-align: left;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow: 0 10px 25px rgba(120, 100, 200, 0.3);
+  transform: translateY(-3px);
+}
+
+.info-card h3 {
+  font-size: 22px;
+  color: #3e2d64;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 15px;
+  color: #4e4e4e;
+  margin: 5px 0;
+}
+
+.loading-text {
+  color: #4b3f72;
+  font-weight: 500;
+  margin-bottom: 30px;
+  animation: fadeIn 1.2s ease-in-out infinite alternate;
+}
+
+/* Posts heading */
+.posts-heading {
+  text-align: center;
+  font-size: 20px;
+  color: #3d2e7a;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Posts section */
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Post card */
+.post-card {
+  background: rgba(255, 255, 255, 0.9);
+  width: 50%;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(150, 120, 220, 0.15);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(120, 90, 200, 0.25);
+}
+
+.post-card h4 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #332d66;
+  margin-bottom: 10px;
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.post-date {
+  color: #666;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.post-stats {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #3f2b96;
+  font-weight: 500;
+  background: rgba(230, 230, 255, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* No posts message */
+.no-posts {
+  font-size: 16px;
+  color: #4b3f72;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(160, 140, 220, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
