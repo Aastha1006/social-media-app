@@ -15,9 +15,12 @@ function Profile() {
 
   const fetchUserData = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/user/profile", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/user/profile`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setUserData(res.data);
     } catch (err) {
       console.error("Error fetching user data:", err);
@@ -26,9 +29,12 @@ function Profile() {
 
   const fetchUserPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/posts", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/posts`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       const userPosts = res.data.filter((p) => p.userName === name);
       setPosts(userPosts);
     } catch (err) {

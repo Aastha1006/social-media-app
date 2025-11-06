@@ -18,7 +18,9 @@ function Feed() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/posts");
+      const res = await axios.get(
+        "https://social-media-app-hpdy.onrender.com/api/posts"
+      );
       setPosts(res.data);
     } catch (err) {
       console.error("Error fetching posts:", err);
@@ -33,7 +35,7 @@ function Feed() {
     reader.onloadend = async () => {
       const base64Image = reader.result;
 
-      await fetch("http://localhost:8080/api/posts", {
+      await fetch("https://social-media-app-hpdy.onrender.com/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +59,7 @@ function Feed() {
 
   const handleLike = async (id) => {
     await axios.post(
-      `http://localhost:8080/api/posts/${id}/like`,
+      `https://social-media-app-hpdy.onrender.com/api/posts/${id}/like`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -68,7 +70,7 @@ function Feed() {
     const text = commentText[id];
     if (!text) return;
     await axios.post(
-      `http://localhost:8080/api/posts/${id}/comment`,
+      `https://social-media-app-hpdy.onrender.com/api/posts/${id}/comment`,
       { text },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -77,9 +79,12 @@ function Feed() {
   };
 
   const handleDeletePost = async (id) => {
-    await axios.delete(`http://localhost:8080/api/posts/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    await axios.delete(
+      `https://social-media-app-hpdy.onrender.com/api/posts/${id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     fetchPosts();
   };
 
@@ -94,7 +99,7 @@ function Feed() {
   const handleSaveEdit = async (postId, commentId) => {
     if (!editText.trim()) return;
     await axios.put(
-      `http://localhost:8080/api/posts/${postId}/comment/${commentId}`,
+      `https://social-media-app-hpdy.onrender.com/api/posts/${postId}/comment/${commentId}`,
       { text: editText },
       { headers: { Authorization: `Bearer ${token}` } }
     );
