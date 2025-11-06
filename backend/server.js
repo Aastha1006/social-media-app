@@ -12,7 +12,10 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://social-media-app-git-main-aastha-ukeys-projects.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
