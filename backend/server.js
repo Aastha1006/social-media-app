@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://social-media-dnab0l0kn-aastha-ukeys-projects.vercel.app",
+      "https://social-media-kxa7x01cm-aastha-ukeys-projects.vercel.app/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
