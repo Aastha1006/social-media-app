@@ -16,8 +16,8 @@ r.post("/signup", async (req, res) => {
     const exist = await User.findOne({ email });
     if (exist) return res.status(409).json({ error: "Email already used" });
 
-    const pass = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, password: pass });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await User.create({ name, email, password: hashedPassword });
     const token = jwt.sign(
       { id: user._id, name: user.name, email: user.email },
       process.env.JWT_SECRET,
@@ -41,7 +41,7 @@ r.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(401).json({ error: "Invalid credentials" });
 
-    const ok = await bcrypt.compare(password, user.pass);
+    const ok = await bcrypt.compare(password, user.password);
     if (!ok) return res.status(401).json({ error: "Invalid credentials" });
 
     const token = jwt.sign(
