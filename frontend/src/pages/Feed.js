@@ -90,7 +90,7 @@ function Feed() {
 
   const handleDeleteComment = async (postId, commentId) => {
     await axios.delete(
-      `http://localhost:8080/api/posts/${postId}/comment/${commentId}`,
+      `https://social-media-app-hpdy.onrender.com/api/posts/${postId}/comment/${commentId}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
     fetchPosts();

@@ -14,11 +14,17 @@ function Signup() {
     e.preventDefault();
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, {
-        name,
-        email,
-        password,
-      });
+      await axios.post(
+        `${
+          process.env.REACT_APP_API_URL ||
+          "https://social-media-app-hpdy.onrender.com"
+        }/api/auth/signup`,
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       setTransitioning(true);
 

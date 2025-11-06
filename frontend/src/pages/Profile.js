@@ -16,7 +16,10 @@ function Profile() {
   const fetchUserData = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/user/profile`,
+        `${
+          process.env.REACT_APP_API_URL ||
+          "https://social-media-app-hpdy.onrender.com"
+        }/api/user/profile`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -30,7 +33,10 @@ function Profile() {
   const fetchUserPosts = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/posts`,
+        `${
+          process.env.REACT_APP_API_URL ||
+          "https://social-media-app-hpdy.onrender.com"
+        }/api/posts`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
