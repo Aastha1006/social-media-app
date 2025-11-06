@@ -17,7 +17,7 @@ r.post("/signup", async (req, res) => {
     if (exist) return res.status(409).json({ error: "Email already used" });
 
     const pass = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, pass });
+    const user = await User.create({ name, email, password: pass });
     const token = jwt.sign(
       { id: user._id, name: user.name, email: user.email },
       process.env.JWT_SECRET,
