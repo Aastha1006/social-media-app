@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+🌐 LinkedIn Clone – Simple Social Media Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack web application inspired by LinkedIn.  
+Users can sign up, log in, create posts (with or without images), like, comment, and view all posts in a public feed.
 
-## Available Scripts
+🚀 Live Project Links
 
-In the project directory, you can run:
+- **Frontend (Vercel):** https://social-media-8o5o7xvwg-aastha-ukeys-projects.vercel.app
+- **Backend (Render):** https://social-media-app-hpdy.onrender.com
+- **GitHub Repo:** https://github.com/Aastha1006/social-media-app.git
 
-### `npm start`
+🧠 Tech Stack Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.js
+- HTML, CSS, JavaScript
+- Axios for API calls
 
-### `npm test`
+**Backend:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js
+- Express.js
+- MongoDB Atlas (Database)
+- Mongoose (ORM)
+- JWT (for authentication)
+- bcrypt (for password hashing)
 
-### `npm run build`
+🌟 Features Implemented
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **User Authentication**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - Signup and Login using email and password
+   - Passwords are securely hashed before saving
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Create Post**
 
-### `npm run eject`
+   - Logged-in users can create posts with text (and optionally images)
+   - Each post includes:
+     - User’s name
+     - Post content
+     - Time of creation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **View All Posts**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   - Public feed showing posts from all registered users
+   - Latest posts appear first
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Profile Page**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - Displays user information and all posts created by that user
 
-## Learn More
+5. **Logout**
+   - User can log out securely anytime
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+💻 How It Works
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. User visits the website → sees **Login/Signup** page
+2. After signing up or logging in → redirected to **Feed page**
+3. Users can:
+   - Create posts
+   - View everyone’s posts
+   - Like or comment on posts
+   - Edit or delete their own comments
+   - Visit their **Profile page** to see all their activities
+4. Users can **log out** anytime.
 
-### Code Splitting
+⚙️ How to Run the Project Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 🖥 Frontend Setup
 
-### Analyzing the Bundle Size
+````bash
+cd frontend
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### 🖥️ Backend Setup
+```bash
+cd backend
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✅Evaluation Checklist
 
-### Advanced Configuration
+✔️ Signup and Login working properly
+✔️ Create and View Posts working
+✔️ Profile page with user info and posts
+✔️ Responsive and clean UI
+✔️ Frontend (Vercel) + Backend (Render) deployed successfully
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👩‍💻 Deployed By
 
-### Deployment
+Aastha Ukey
+B.Tech Computer Science
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+📧 Email:aasthaukey6@gmail.com
+🌐 GitHub: https://github.com/Aastha1006
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+````
